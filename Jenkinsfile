@@ -11,6 +11,17 @@ pipeline {
         sh 'npm install'
         
       }
+    }
+
+    stage("build image"){
+      steps{
+        script{
+          echo "building the docker image..."
+         # withCredentials([usernamePassword(credentialsId:'dockerhub', passwordVariable: 'PASS', usernameVariable: 'USER' )]){
+         #   sh 'docker build -t '
+         # }
+        }
+      }
     }  
     
     }
